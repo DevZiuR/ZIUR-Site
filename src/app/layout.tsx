@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Host_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-host-grotesk",
 });
 
 export const metadata: Metadata = {
-  title: "Ziur Studio",
+  title: "ZIUR Studio",
   description:
     "Websites and marketing that turn premium brands into premium bookings.",
 };
@@ -25,10 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${hostGrotesk.variable} h-full antialiased`}>
       <body className="font-sans bg-[#FAFAF8] text-[#111111] min-h-full flex flex-col">
         {children}
       </body>
