@@ -501,12 +501,40 @@ export default function Home() {
           </div>
 
           <div className="px-6 md:px-12 pb-10 md:pb-14">
-            <div className="relative overflow-hidden border border-ink/10 bg-[#191d20]">
+            {/* Image card with hover darkening, scale, and caption */}
+            <div className="group relative overflow-hidden border border-ink/10 bg-[#191d20] cursor-pointer">
+
+              {/* The project image — scales up slightly on hover */}
               <img
-                src="https://i.imgur.com/m7ES6Gy.png"
-                alt=""
-                className="block h-auto w-full max-w-full object-contain object-center"
+                src="https://i.imgur.com/17rDfqW.png"
+                alt="LR Miami — Premium Exotic Car Rental, Miami FL"
+                className="block h-auto w-full max-w-full object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
               />
+
+              {/* Hover dark overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 ease-out pointer-events-none" />
+
+              {/* Hover reveal: top-left project label */}
+              <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out">
+                <span className="inline-block font-sans text-[10px] uppercase tracking-[0.22em] text-white/70 bg-black/50 backdrop-blur-sm px-3 py-1 border border-white/10">
+                  Web Design &amp; Development
+                </span>
+              </div>
+
+              {/* Bottom caption bar — always visible, dims on hover */}
+              <div className="absolute bottom-0 inset-x-0 flex items-end justify-between px-5 py-4 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
+                <div>
+                  <p className="font-heading text-xs uppercase tracking-[0.2em] text-white/90 font-semibold">
+                    LR Miami
+                  </p>
+                  <p className="font-sans text-[11px] text-white/50 tracking-wide mt-0.5">
+                    Premium Exotic Car Rental · Miami, FL
+                  </p>
+                </div>
+                <span className="font-sans text-[10px] uppercase tracking-widest text-white/40">
+                  2026
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -1105,17 +1133,227 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-ink/10 py-8">
-        <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-sm text-ink/50">
-            © {new Date().getFullYear()} Ziur Studio. All rights reserved.
-          </p>
-          <p className="font-sans text-sm text-ink/50">
-            Made for brands that mean business.
-          </p>
+      {/* ── Footer ────────────────────────────────────────────────────────────── */}
+      <footer className="bg-[#0a0a0a] text-white border-t border-white/[0.07]">
+
+        {/* ── Top nav grid ──────────────────────────────────────────────────── */}
+        <div className="mx-auto max-w-6xl px-6 pt-16 pb-12 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-6">
+
+          {/* Col 1 — Services */}
+          <div>
+            <p className="font-sans text-[10px] uppercase tracking-[0.26em] text-white/30 mb-5 font-semibold">
+              Services
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "Web Design & Dev", href: "#services" },
+                { label: "Paid Advertising", href: "#services" },
+                { label: "SEO & Content", href: "#services" },
+                { label: "Brand & Positioning", href: "#services" },
+                { label: "CRO", href: "#services" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="font-sans text-xs text-white uppercase tracking-[0.13em] hover:opacity-60 transition-opacity duration-200"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 2 — Work */}
+          <div>
+            <p className="font-sans text-[10px] uppercase tracking-[0.26em] text-white/30 mb-5 font-semibold">
+              Work
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "LR Miami", href: "/work/lr-miami" },
+                { label: "All Case Studies", href: "#work" },
+                { label: "Selected Projects", href: "#selected-projects" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="font-sans text-xs text-white uppercase tracking-[0.13em] hover:opacity-60 transition-opacity duration-200"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 3 — Company */}
+          <div>
+            <p className="font-sans text-[10px] uppercase tracking-[0.26em] text-white/30 mb-5 font-semibold">
+              Company
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "About", href: "#" },
+                { label: "Process", href: "#process" },
+                { label: "Pricing", href: "#pricing" },
+                { label: "Contact", href: "#contact" },
+                { label: "Start a Project", href: "#contact" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="font-sans text-xs text-white uppercase tracking-[0.13em] hover:opacity-60 transition-opacity duration-200"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4 — Legal */}
+          <div>
+            <p className="font-sans text-[10px] uppercase tracking-[0.26em] text-white/30 mb-5 font-semibold">
+              Legal
+            </p>
+            <ul className="space-y-3">
+              {[
+                { label: "Privacy Policy", href: "#" },
+                { label: "Terms of Service", href: "#" },
+                { label: "Cookie Policy", href: "#" },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    className="font-sans text-xs text-white uppercase tracking-[0.13em] hover:opacity-60 transition-opacity duration-200"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* ── Mid CTA strip ─────────────────────────────────────────────────── */}
+        <div className="border-t border-white/[0.06]">
+          <div className="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div>
+              <p className="font-heading text-lg font-medium text-white tracking-tight">
+                Ready to stop losing bookings to a worse site?
+              </p>
+              <p className="font-sans text-sm text-white/35 mt-1">
+                We reply within one business day with honest thoughts.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="flex-shrink-0 inline-flex items-center gap-3 px-6 py-3 rounded-full font-sans font-semibold text-sm uppercase tracking-widest bg-white text-[#0a0a0a] hover:bg-white/90 transition-colors duration-300 whitespace-nowrap"
+            >
+              Start a Project
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
+
+        {/* ── Bottom bar ────────────────────────────────────────────────────── */}
+        <div className="border-t border-white/[0.06]">
+          <div className="mx-auto max-w-6xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+            {/* Left — logo + copyright */}
+            <div className="flex items-center gap-4">
+              <a href="/" className="font-heading font-semibold text-base text-white tracking-tight">
+                ZIUR.
+              </a>
+              <span className="text-white/15 text-xs">|</span>
+              <p className="font-sans text-xs text-white/30">
+                © {new Date().getFullYear()} ZIUR Studio
+              </p>
+            </div>
+
+            {/* Center — live status indicator */}
+            <div className="flex items-center gap-2 order-last sm:order-none">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              </span>
+              <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/35">
+                All Systems Operational
+              </span>
+            </div>
+
+            {/* Right — social links */}
+            <div className="flex items-center gap-4">
+              {/* Instagram */}
+              <a
+                href="https://instagram.com/ziurstudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ZIUR Studio on Instagram"
+                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                </svg>
+              </a>
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com/company/ziurstudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ZIUR Studio on LinkedIn"
+                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              {/* X / Twitter */}
+              <a
+                href="https://x.com/ziurstudio"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ZIUR Studio on X"
+                className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
+      {/* ── Sticky Mobile CTA ─────────────────────────────────────────────────
+           Visible only on mobile (hidden md:hidden). Fixed to bottom of
+           viewport. Disappears once user reaches the contact section.
+      ──────────────────────────────────────────────────────────────────────── */}
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 px-4 pb-5 pt-2 pointer-events-none">
+        <a
+          href="#contact"
+          className="
+            pointer-events-auto
+            flex items-center justify-between
+            w-full
+            px-6 py-4
+            rounded-full
+            bg-[#111111]/90 backdrop-blur-xl
+            border border-white/10
+            shadow-[0_8px_32px_rgba(0,0,0,0.4)]
+            font-sans text-sm font-semibold uppercase tracking-widest text-white
+            active:scale-[0.97] transition-transform duration-150
+          "
+        >
+          <span>Start a project</span>
+          <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white" aria-hidden>
+            &rarr;
+          </span>
+        </a>
+      </div>
     </>
   );
 }

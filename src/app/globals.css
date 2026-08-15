@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
+/* ── Lenis smooth scroll prerequisite ─────────────────────────────────────
+   Tailwind's Preflight injects `scroll-behavior: smooth` on html, which
+   makes the browser handle scrolling natively and Lenis appears to do
+   nothing. We override it here so Lenis owns the scroll entirely.
+   ───────────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: auto !important;
+}
+
 @theme inline {
   /* Type families */
-  --font-heading: var(--font-host-grotesk), "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  --font-body: var(--font-host-grotesk), "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  --font-serif: var(--font-heading);
+  --font-heading: var(--font-geist), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: var(--font-host-grotesk), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-geist), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-sans: var(--font-body);
 
   /* Colors */
