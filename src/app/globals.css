@@ -12,7 +12,7 @@ html {
 @theme inline {
   /* Type families */
   --font-heading: var(--font-geist), "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: var(--font-host-grotesk), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: var(--font-geist), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: var(--font-geist), "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-sans: var(--font-body);
 
@@ -65,7 +65,6 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   letter-spacing: -0.005em;
-  text-transform: uppercase;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
