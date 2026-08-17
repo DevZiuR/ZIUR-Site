@@ -277,8 +277,8 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={100} immediate>
-              <h1 className="font-heading text-display font-medium text-black text-7xl max-w-5xl mb-8 tracking-tight leading-[1.1] normal-case">
-                Your Competitors Have Worse Service and Better Marketing. Let's Fix That.
+              <h1 className="font-heading text-display font-medium text-black text-5xl sm:text-7xl max-w-5xl mb-8 tracking-tighter  leading-none normal-case">
+              Better Service. Worse Website. Let's Fix The Second One.
               </h1>
             </Reveal>
 
@@ -481,7 +481,7 @@ export default function Home() {
         </section>
 
         {/* Selected Projects */}
-        <section id="selected-projects" className="bg-[#e9e8e4] text-ink pt-16 md:pt-20 pb-4 md:pb-6 border-b border-ink/10">
+        <section id="selected-projects" className="bg-[#000000] text-ink pt-16 md:pt-20 pb-4 md:pb-6 border-b border-ink/10">
           <div className="flex items-center justify-between px-6 md:px-12 mb-4">
             <p className="font-sans text-label uppercase tracking-[0.22em] text-ink/70">
               Selected Projects
@@ -1219,24 +1219,24 @@ export default function Home() {
            Visible only on mobile (hidden md:hidden). Fixed to bottom of
            viewport. Disappears once user reaches the contact section.
       ──────────────────────────────────────────────────────────────────────── */}
-      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 px-4 pb-5 pt-2 pointer-events-none">
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-40 px-3 sm:px-4 pb-5 pt-2 pointer-events-none">
         <a
           href="#contact"
           className="
             pointer-events-auto
             flex items-center justify-between
             w-full
-            px-6 py-4
+            px-4 sm:px-6 py-3 sm:py-4
             rounded-full
             bg-[#111111]/90 backdrop-blur-xl
             border border-white/10
             shadow-[0_8px_32px_rgba(0,0,0,0.4)]
-            font-sans text-sm font-semibold uppercase tracking-widest text-white
+            font-sans text-xs sm:text-sm font-semibold uppercase tracking-widest text-white
             active:scale-[0.97] transition-transform duration-150
           "
         >
           <span>Start a project</span>
-          <span className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white" aria-hidden>
+          <span className="w-7 sm:w-8 h-7 sm:h-8 rounded-full bg-white/10 flex items-center justify-center text-white" aria-hidden>
             &rarr;
           </span>
         </a>
