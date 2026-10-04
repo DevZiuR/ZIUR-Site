@@ -675,7 +675,7 @@ export default function Home() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="bg-[#0a0a0a] text-white py-28 sm:py-36 border-b border-white/10">
+        <section id="pricing" className="hidden bg-[#0a0a0a] text-white py-28 sm:py-36 border-b border-white/10">
           <div className="mx-auto max-w-6xl px-6">
             <Reveal>
               <div className="text-center max-w-2xl mx-auto mb-16 md:mb-24">
@@ -1151,7 +1151,6 @@ export default function Home() {
               <ul className="space-y-2.5">
                 {[
                   { label: "Work", href: "#selected-projects" },
-                  { label: "Pricing", href: "#pricing" },
                   { label: "FAQ", href: "#faq" },
                   { label: "Contact", href: "#contact" },
                 ].map((l) => (
