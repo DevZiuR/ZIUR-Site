@@ -233,7 +233,9 @@ export default function Home() {
             </a>
           </div>
           <a
-            href="#contact"
+            href="https://calendly.com/ziursolutions/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-sans text-sm font-semibold px-5 py-2 rounded-full bg-black/90 text-white hover:bg-black/80 transition-colors duration-300"
           >
             Start a project
@@ -1167,7 +1169,9 @@ export default function Home() {
           {/* CTA + socials */}
           <div className="col-span-2 md:col-span-1 flex flex-col items-start md:items-end gap-6">
             <a
-              href="#contact"
+              href="https://calendly.com/ziursolutions/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/15 font-sans text-xs font-semibold uppercase tracking-widest text-white/70 hover:bg-white hover:text-black hover:border-white transition-all duration-200"
             >
               Start a Project &rarr;
@@ -1220,7 +1224,9 @@ export default function Home() {
       ──────────────────────────────────────────────────────────────────────── */}
       <div className="md:hidden fixed bottom-0 inset-x-0 z-40 px-3 sm:px-4 pb-5 pt-2 pointer-events-none">
         <a
-          href="#contact"
+          href="https://calendly.com/ziursolutions/30min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="
             pointer-events-auto
             flex items-center justify-between
